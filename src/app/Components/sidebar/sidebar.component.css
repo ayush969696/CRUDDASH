@@ -1,0 +1,49 @@
+.main-section {
+  position: fixed; 
+  top: 0;
+  left: 0; 
+  width: 16rem; 
+  height: 100vh; 
+  overflow-y: auto; 
+  background-color: #1a202c;
+  z-index: 10; 
+  padding-top: 1rem; 
+}
+
+.main-content {
+  margin-left: 16rem;
+  padding: 1rem;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  position: relative;
+  width: 100%;
+  z-index: 100;
+  border-radius: 5px;
+}
+
+.dropdown-menu.visible {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+

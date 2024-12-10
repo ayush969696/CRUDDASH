@@ -1,0 +1,12 @@
+<div class="card">
+  <p-tabMenu
+    class="custom-tabmenu"
+    [model]="items"
+    [activeItem]="activeItem"
+    (activeItemChange)="onActiveItemChange($event)"
+  />
+</div>
+
+<div>
+  <router-outlet></router-outlet>
+</div>

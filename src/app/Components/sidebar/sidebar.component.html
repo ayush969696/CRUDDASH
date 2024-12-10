@@ -1,0 +1,94 @@
+<div class="main-section  flex flex-column align-items-center w-16rem  overflow-hidden text-blue-300 bg-gray-900">
+  <!-- Top Section -->
+  <a class="flex align-items-center w-full px-2 my-4" href="#">
+    <!-- <i class="text-white pi pi-play w-2rem text-xl text-white"></i> -->
+    <!-- <span class="text-white ml-2 text-sm font-bold text-white">Broker Saathi</span> -->
+    <img src="https://brokersaathi.com/assets/images/brokersaathi-logo.png" alt="logo-img" class="w-9rem">
+  </a>
+
+  <!-- Navigation -->
+  <div class="w-full px-2">
+    <!-- First Section -->
+    <div class="flex flex-column align-items-center w-full mt-3 border-top-1 border-gray-500">
+      <!-- Dashboard with Dropdown -->
+      <div class="dropdown w-full">
+        <a
+          class="flex align-items-center w-full h-3rem px-2 mt-2 border-round hover:bg-blue-700 cursor-pointer"
+          (click)="toggleDropdown($event, 'dashboard')"
+        >
+          <i class="text-white pi pi-home text-lg"></i>
+          <span class="text-white ml-2 text-sm font-medium">Dashboard</span>
+          <i class="text-white pi pi-angle-down ml-auto"></i>
+        </a>
+        <div
+          class="dropdown-menu bg-gray-800 border-round mt-1"
+          [ngClass]="{ 'visible': activeDropdown === 'dashboard' }"
+        >
+          <a class="block text-white px-3 py-3 hover:bg-blue-700 " routerLink="tabs">User Tab</a>
+          <a class="block text-white px-3 py-3 hover:bg-blue-700" href="#">Option 2</a>
+          <a class="block text-white px-3 py-3 hover:bg-blue-700" href="#">Option 3</a>
+        </div>
+      </div>
+
+      <!-- Products with Dropdown -->
+      <div class="dropdown w-full">
+        <a
+          class="flex align-items-center w-full h-3rem px-2 mt-2 border-round hover:bg-blue-700 cursor-pointer"
+          (click)="toggleDropdown($event, 'products')"
+        >
+          <i class="text-white pi pi-shopping-cart text-lg"></i>
+          <span class="text-white ml-2 text-sm font-medium">Products</span>
+          <i class="text-white pi pi-angle-down ml-auto"></i>
+        </a>
+        <div
+          class="dropdown-menu bg-gray-800 border-round mt-1"
+          [ngClass]="{ 'visible': activeDropdown === 'products' }"
+        >
+          <a class="block text-white px-3 py-3 hover:bg-blue-700" href="#">Option 1</a>
+          <a class="block text-white px-3 py-3 hover:bg-blue-700" href="#">Option 2</a>
+          <a class="block text-white px-3 py-3 hover:bg-blue-700" href="#">Option 3</a>
+        </div>
+      </div>
+
+      <!-- Insights with Dropdown -->
+      <div class="dropdown w-full">
+        <a
+          class="flex align-items-center w-full h-3rem px-2 mt-2 border-round hover:bg-blue-700 cursor-pointer"
+          (click)="toggleDropdown($event, 'insights')"
+        >
+          <i class="text-white pi pi-chart-bar text-lg"></i>
+          <span class="text-white ml-2 text-sm font-medium">Insights</span>
+          <i class="text-white pi pi-angle-down ml-auto"></i>
+        </a>
+        <div
+          class="dropdown-menu bg-gray-800 border-round mt-1"
+          [ngClass]="{ 'visible': activeDropdown === 'insights' }"
+        >
+          <a class="block text-white px-3 py-3 hover:bg-blue-700" href="#">Option 1</a>
+          <a class="block text-white px-3 py-3 hover:bg-blue-700" href="#">Option 2</a>
+          <a class="block text-white px-3 py-3 hover:bg-blue-700" href="#">Option 3</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-column align-items-center w-full mt-4 border-top-1 border-gray-500">
+    <a class="flex align-items-center w-full h-3rem px-3 mt-2 border-round hover:bg-blue-700" href="#">
+      <i class="text-white pi pi-cog text-lg"></i>
+      <span class="text-white ml-2 text-sm font-medium">Settings</span>
+    </a>
+    <a class="relative flex align-items-center w-full h-3rem px-3 mt-2 border-round hover:bg-blue-700" href="#">
+      <i class="text-white pi pi-envelope text-lg"></i>
+      <span class="text-white ml-2 text-sm font-medium">Messages</span>
+      <span class="text-white absolute top-0 left-0 w-1rem h-1rem mt-2 ml-2 bg-blue-500 border-circle"></span>
+    </a>
+  </div>
+
+  
+
+  <!-- Footer -->
+  <a class="flex align-items-center justify-content-center w-full h-4rem mt-auto bg-blue-800 hover:bg-blue-700" href="#">
+    <i class="text-white pi pi-user text-lg"></i>
+    <span class="text-white ml-2 text-sm font-medium">Account</span>
+  </a>
+</div>

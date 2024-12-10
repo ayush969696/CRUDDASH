@@ -1,0 +1,66 @@
+<div class="flex align-items-center justify-content-center w-full">
+    <label for="dropzone-file" class="flex flex-column align-items-center justify-content-center w-full h-64 border-2 border-dashed border-gray-300 rounded cursor-pointer bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-600">
+      <div class="flex flex-column align-items-center justify-content-center pt-5 pb-6">
+        <i class="pi pi-cloud-upload text-7xl text-gray-500 mb-3"></i>
+        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">PDF</p>
+      </div>
+      <input
+        id="dropzone-file"
+        multiple
+        type="file"
+        accept="application/pdf"
+        class="hidden"
+        (change)="onFileSelected($event)"
+      />
+    </label>
+  </div>
+  
+  <!-- Table to display uploaded files -->
+  <div class="bg-white shadow-2 px-6 py-4 mt-8 rounded-lg">
+  
+      <h1 class="text-2xl text-start text-gray-700 uppercase">All Pdf List</h1>
+  
+  <table class="table-auto w-full mt-4 bg-white shadow-lg">
+
+    
+    <thead>
+      <tr class="bg-gray-100 uppercase">
+        <th class="text-left py-3 px-5">Name</th>
+        <th class="text-left py-3 px-5">Size</th>
+        <th class="text-left py-3 px-5">Type</th>
+        <th class="text-left py-3 px-5">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let file of uploadedFiles; let i = index; trackBy: trackByFile" class="border-3 border-gray-900">
+        <td class="py-3 px-5 border-bottom-1 border-gray-300">
+          <a [href]="file.url" target="_blank" class=" text-gray-900 no-underline">
+            <i class="pi pi-file-pdf"></i>
+            {{ file.name }}
+          </a>
+        </td>
+        <td class="py-4 px-5 border-bottom-1 border-gray-300">{{ (file.size / 1024).toFixed(2) }} KB</td>
+        <td class="py-4 px-5 border-bottom-1 border-gray-300">{{ file.type }}</td>
+        <td class="py-4 px-5 border-bottom-1 border-gray-300">
+          <i
+            class="pi pi-trash text-lg cursor-pointer"
+            (click)="deleteFile(i)"
+          ></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+  *ngIf="uploadedFiles.length === 0"
+  class="text-center py-4 text-gray-500"
+>
+  <img
+  src=""
+    src="https://img.freepik.com/free-vector/no-data-concept-illustration_114360-2506.jpg?t=st=1732817506~exp=1732821106~hmac=caafd5e57377a801020bba54449410b2ba7eb5f39c91381da0ee18a90b9ed6d6&w=996"
+    alt="no-data-found"
+    class="w-16rem"
+  />
+  <p>No PDF Found.</p>
+</div>
+  </div>
